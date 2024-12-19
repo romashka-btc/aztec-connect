@@ -4,10 +4,10 @@ RUN apk update \
     && apk add --no-cache \
         build-base \
         clang \
-        cmake \
-        git \
-        curl \
-        perl
+    cmake \
+    curl \
+    git \
+    perl
 # libomp is not available in alpine by default. Download and build.
 RUN git clone -b release/10.x --depth 1 https://github.com/llvm/llvm-project.git \
   && cd llvm-project && mkdir build-openmp && cd build-openmp \
